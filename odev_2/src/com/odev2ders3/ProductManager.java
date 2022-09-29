@@ -1,4 +1,4 @@
-package com.com.odev2ders3;
+package com.odev2ders3;
 
 public class ProductManager {
 public void Add(Product product){
@@ -6,7 +6,6 @@ public void Add(Product product){
 
 
 }
-
 
 
 

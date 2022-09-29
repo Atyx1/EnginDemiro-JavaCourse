@@ -1,4 +1,4 @@
-package com.com.odev2ders3;
+package com.odev2ders3;
 
 public class Product {
     //attribute || field
@@ -8,7 +8,20 @@ public class Product {
     private int stockAmount;
     private  int id;
     private String  kod;
+public Product(String name,String description,double price,int stockAmount,String kod){
+    this.name=name;
+    this.description=description;
+    this.price=price;
+    this.stockAmount=stockAmount;
+    this.kod=kod;
 
+
+
+}
+public Product(){
+
+    System.out.println("Override");
+}
 
     public String getName() {
         return name;
@@ -56,5 +69,14 @@ public class Product {
 
     public void setKod(String kod) {
         this.kod = kod;
+    }
+    public String toString(){
+
+       return "name:"+name
+               +"/description:" +description
+               +"/price" +price
+               +"/stockAmoun:"+stockAmount
+               +"/id:"+id
+               +"code"+kod;
     }
 }
