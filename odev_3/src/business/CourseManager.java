@@ -9,7 +9,7 @@ import java.util.List;
 
 public class CourseManager {
     private Course course;
-
+    private CategoryManager categoryManager;
     private CourseDao courseDao;
 
     private Logger [] loggers;
@@ -39,14 +39,18 @@ public class CourseManager {
         } else {
 
             if (courseArraylist.contains(courseAdd.getName())) {
-                if (courseAdd.getPrice()<=0) {
-                    System.out.println("!!!!!!!!!!!!!!!!!");
-                    throw new Exception("Kursa ismi ayni olamaz ve 0 dan dusuk bir fiyatta kurs yayinlayamazsiniz ");
-                } else {
-                    throw new Exception("Kurs ismi önce yayinladiğiniz kurslardan herhangi biri ile ayni olamaz");
+
+                    if (courseAdd.getPrice() <= 0) {
+                        System.out.println("!!!!!!!!!!!!!!!!!");
+                        showException("Course Name","Course Price ");
+
+                    } else {
+                       showException("Course Name");
+
+                    }
                 }
 
-            } else {
+            else {
                 courseArraylist.add(courseAdd.getName());
                 System.out.println("*************");
                 courseDao.addDatabase(courseAdd);
@@ -60,5 +64,14 @@ public class CourseManager {
         }
     }
 
+public void showException(String mesaj) throws Exception {
+        throw new Exception(mesaj+"FAULT");
 
+}
+    public void showException(String mesaj,String mesaj2) throws Exception {
+        throw new Exception(mesaj+" FAULT "+mesaj2+"FAULT");
+    }
+    public void showException(String mesaj,String mesaj2,String mesaj3) throws Exception {
+        throw new Exception(mesaj+"FAULT "+mesaj2+"FAULT"+mesaj3+"FAULT");
+    }
 }

@@ -8,7 +8,7 @@ public class Course {
     private String name;
 
 public Course (Educator courseEducator,Category courseCategory,String name,double price){
-    this.courseEducator=courseEducator;
+    this.setCourseEducator(courseEducator);
     this.setCourseCategory(courseCategory);
     this.name=name;
     this.price=price;
@@ -38,5 +38,13 @@ public Course (Educator courseEducator,Category courseCategory,String name,doubl
 
     public void setCourseCategory(Category courseCategory) {
         this.courseCategory = courseCategory;
+    }
+
+    public Educator getCourseEducator() {
+        return courseEducator;
+    }
+
+    public void setCourseEducator(Educator courseEducator) {
+        this.courseEducator = courseEducator;
     }
 }

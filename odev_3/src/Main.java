@@ -20,15 +20,14 @@ public class Main {
         Course course_1 = new Course(educator,category,"JAVA",0);
         Course course_2 = new Course(educator2,category,"C#",12);
         Course course_3 = new Course(educator1,category,"PHP",34);
-
+       CategoryManager categoryManager = new CategoryManager();
         CourseManager courseManager = new CourseManager(new HibernateCourseDao(),loggers);
+          CategoryManager categoryManager1 = new CategoryManager();
 
 
-        courseManager.add(course_2);
-        courseManager.add(course);
-        courseManager.add(course_1);
+         courseManager.add(course);
+         courseManager.add(course_1);
 
-        courseManager.add(course_3);
 
 
 
